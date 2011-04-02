@@ -1,10 +1,7 @@
-" ---------------------------------------------------------------------------
-" first the disabled features due to security concerns
-set modelines=0         " no modelines [http://www.guninski.com/vim1.html]
+filetype off
 
-" ---------------------------------------------------------------------------
-" operational settings
-syntax on
+call pathogen#runtime_append_all_bundles()
+set modelines=0               " no modelines [http://www.guninski.com/vim1.html]
 set ruler                     " show the line number on the bar
 set more                      " use more prompt
 set autoread                  " watch for file changes
@@ -16,7 +13,9 @@ set showmode
 set showcmd
 set showmatch
 set nocompatible              " vim, not vi
-set autoindent smartindent    " auto/smart indent
+set  smartindent              " smart indent
+set cindent                   "recommended seting for automatic C-style indentation
+set autoindent                "automatic indentation in non-C files
 set expandtab                 " expand tabs to spaces
 set smarttab                  " tab and backspace are smart
 set tabstop=2                 " 6 spaces
@@ -28,7 +27,6 @@ set guifont=Monospace\ 10
 set noswapfile 
 set matchpairs=(:),{:},{:},<:>
 
-" ---------------------------------------------------------------------------
 "  searching
 set incsearch                 " incremental search
 set ignorecase                " search ignoring case
@@ -36,32 +34,35 @@ set nohls                     " highlight the search
 set showmatch                 " show matching bracket
 set diffopt=filler,iwhite     " ignore all whitespace and sync
 
-" ---------------------------------------------------------------------------
 "  mouse stuffs
 set mouse=a                   " mouse support in all modes
 set mousehide                 " hide the mouse when typing
 
-" ---------------------------------------------------------------------------
-"last 5 lines above/below
+set cursorline
+set cursorcolumn
+set wildmenu                  "make tab completion act more like bash
+set wildmode=list:longest     "tab complete to longest common string, like bash
 set sidescrolloff=5           " keep at least 5 lines left/right
 set history=200
 set linebreak
-set cmdheight=2               " command line two lines high
+set cmdheight=3               " command line three lines high
 set undolevels=1000           " 1000 undos
 set updatecount=100           " switch every 100 chars
 set complete=.,w,b,u,U,t,i,d  " do lots of scanning on tab completion
 set ttyfast                   " we have a fast terminal
+
+"put my swap files in another directory
+set backupdir=/home/tyler/.vim/backup
+set directory=/home/tyler/.vim/backup
+
 filetype on                   " Enable filetype detection
 filetype indent on            " Enable filetype-specific indenting
 filetype plugin on            " Enable filetype-specific plugins
+syntax on
 
 "color stuff
 set t_Co=256
 colorscheme molokai
-
-"put my swap files in another directory
-set directory=/home/user/tcopple/.swaps/
-let mapleader=","
 
 "cut and paste stuff
 map <C-c> "+y
@@ -74,8 +75,6 @@ map <C-h> <Esc>:bp<CR>
 map <C-l> <Esc>:bn<CR>
 map <S-h> <Esc>:tabp<CR>
 map <S-l> <Esc>:tabn<CR>
-
-map <F4> :call OpenReciprocalFile('vsplit')<Return>
 
 " move the current line up or down
 nmap <C-Down>  :m+<CR>==
@@ -97,12 +96,11 @@ vmap <C-Up> :m'<-2<CR>gv=gv
 vmap <C-Right> >gv
 vmap <C-Left> <gv
 
-"source surround.vim
-so ~/.vim/plugins/surround.vim
+"remap leader to ',' which is much easier than '\'
+let mapleader = ',' 
 
-"source autoclose.vim
-so ~/.vim/plugins/autoclose.vim
+"make nerdtree open when you hit ,d
+map <Leader>d :NERDTreeToggle<CR> :set number<CR>  
 
-nnoremap <leader>pe :!p4 edit %<Return>
+so ~/.vim/personal/clean_close.vim
 nnoremap <leader>bd :call CleanClose(0)<Return>
-nnoremap <leader>d :NERDTreeToggle<cr>
