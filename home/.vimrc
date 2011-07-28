@@ -13,7 +13,7 @@ set showmode
 set showcmd
 set showmatch
 set nocompatible              " vim, not vi
-set  smartindent              " smart indent
+set smartindent              " smart indent
 set cindent                   "recommended seting for automatic C-style indentation
 set autoindent                "automatic indentation in non-C files
 set expandtab                 " expand tabs to spaces
@@ -39,7 +39,6 @@ set mouse=a                   " mouse support in all modes
 set mousehide                 " hide the mouse when typing
 
 set cursorline
-set cursorcolumn
 set wildmenu                  "make tab completion act more like bash
 set wildmode=list:longest     "tab complete to longest common string, like bash
 set sidescrolloff=5           " keep at least 5 lines left/right
@@ -50,10 +49,6 @@ set undolevels=1000           " 1000 undos
 set updatecount=100           " switch every 100 chars
 set complete=.,w,b,u,U,t,i,d  " do lots of scanning on tab completion
 set ttyfast                   " we have a fast terminal
-
-"put my swap files in another directory
-set backupdir=/home/tyler/.vim/backup
-set directory=/home/tyler/.vim/backup
 
 filetype on                   " Enable filetype detection
 filetype indent on            " Enable filetype-specific indenting
