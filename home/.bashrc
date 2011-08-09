@@ -125,3 +125,7 @@ cd() {
   echo -e "   \033[1;30m"`pwd`"\033[0m"
 }
 
+if [ -f ~/.bash_profile ]; then
+    . ~/.bash_profile
+fi
+
