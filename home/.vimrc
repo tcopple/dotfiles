@@ -13,7 +13,7 @@ set showmode
 set showcmd
 set showmatch
 set nocompatible              " vim, not vi
-set  smartindent              " smart indent
+set smartindent               " smart indent
 set cindent                   "recommended seting for automatic C-style indentation
 set autoindent                "automatic indentation in non-C files
 set expandtab                 " expand tabs to spaces
@@ -39,7 +39,6 @@ set mouse=a                   " mouse support in all modes
 set mousehide                 " hide the mouse when typing
 
 set cursorline
-set cursorcolumn
 set wildmenu                  "make tab completion act more like bash
 set wildmode=list:longest     "tab complete to longest common string, like bash
 set sidescrolloff=5           " keep at least 5 lines left/right
@@ -58,6 +57,11 @@ set directory=/home/tyler/.vim/backup
 filetype on                   " Enable filetype detection
 filetype indent on            " Enable filetype-specific indenting
 filetype plugin on            " Enable filetype-specific plugins
+
+autocmd BufNewFile,BufRead *.textile set wrap
+autocmd BufNewFile,BufRead *.textile set linebreak
+autocmd BufNewFile,BufRead *.textile set nonumber
+
 syntax on
 
 "color stuff
