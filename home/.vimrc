@@ -50,10 +50,6 @@ set updatecount=100           " switch every 100 chars
 set complete=.,w,b,u,U,t,i,d  " do lots of scanning on tab completion
 set ttyfast                   " we have a fast terminal
 
-"put my swap files in another directory
-set backupdir=/home/tyler/.vim/backup
-set directory=/home/tyler/.vim/backup
-
 filetype on                   " Enable filetype detection
 filetype indent on            " Enable filetype-specific indenting
 filetype plugin on            " Enable filetype-specific plugins
