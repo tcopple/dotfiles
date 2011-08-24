@@ -104,3 +104,27 @@ map <Leader>d :NERDTreeToggle<CR> :set number<CR>
 
 so ~/.vim/personal/clean_close.vim
 nnoremap <leader>bd :call CleanClose(0)<Return>
+
+" Automatically cd into the directory that the file is in
+autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
+
+" Remove any trailing whitespace that is in the file
+autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+
+inoremap jj <Esc>
+
+"open URL in browser
+function! Browser ()
+   let line = getline (".")
+   let line = matchstr (line, "http[^   ]*")
+   exec "!chrome ".line
+endfunction
+
+" Open Url on this line with the browser \w
+map <Leader>w :call Browser ()<CR>
+
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+map N Nzz
+map n nzz
+
