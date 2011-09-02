@@ -1,4 +1,4 @@
 colorscheme molokai
 syntax enable
-set guifont=Monospace\ 14
+set guifont=Monospace\ 10
 set background=dark
