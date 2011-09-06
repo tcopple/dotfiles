@@ -24,7 +24,7 @@ set nowrap
 set scrolloff=5               " keep at le
 set backspace=indent,eol,start
 set guifont=Monospace\ 10
-set noswapfile 
+set noswapfile
 set matchpairs=(:),{:},{:},<:>
 
 "  searching
@@ -97,10 +97,10 @@ vmap <C-Right> >gv
 vmap <C-Left> <gv
 
 "remap leader to ',' which is much easier than '\'
-let mapleader = ',' 
+let mapleader = ','
 
 "make nerdtree open when you hit ,d
-map <Leader>d :NERDTreeToggle<CR> :set number<CR>  
+map <Leader>d :NERDTreeToggle<CR> :set number<CR>
 
 so ~/.vim/personal/clean_close.vim
 nnoremap <leader>bd :call CleanClose(0)<Return>
