@@ -102,7 +102,7 @@ FG='\[\033[38;5;119m\]'
 NONE='\[\033[00;0m\]'
 BBLK='\[\033[01;30m\]'
 
-if [ $TERM = 'ansi' -o $TERM = 'vt100' -o $TERM = 'xterm-256color' -o $TERM = 'linux' -o $TERM = 'xterm' ]
+if [ $TERM = 'screen' -o $TERM = 'ansi' -o $TERM = 'vt100' -o $TERM = 'xterm-256color' -o $TERM = 'linux' -o $TERM = 'xterm' ]
 then
   PS1=$FG'\H'$BBLK':'$NONE' '
 else
@@ -114,8 +114,6 @@ set -b
 set -o vi
 export EDITOR=vim
 
-alias mine="ps efu"
-
 cd() {
   if [[ $@ == '-' ]]; then
     builtin cd "$@" > /dev/null  # We'll handle pwd.
@@ -125,8 +123,8 @@ cd() {
   echo -e "   \033[1;30m"`pwd`"\033[0m"
 }
 
-if [ -f ~/.bash_profile ]; then
-    . ~/.bash_profile
-fi
+#if [ -f ~/.bash_profile ]; then
+#    . ~/.bash_profile
+#fi
 
 mine
