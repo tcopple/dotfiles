@@ -82,6 +82,10 @@ map <C-l> <Esc>:bn<CR>
 map <S-h> <Esc>:tabp<CR>
 map <S-l> <Esc>:tabn<CR>
 
+"shortcuts to .vimrc
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
 " move the current line up or down
 nmap <C-Down>  :m+<CR>==
 nmap <C-Up> :m-2<CR>==
