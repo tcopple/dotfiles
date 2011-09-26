@@ -60,6 +60,12 @@ autocmd BufNewFile,BufRead *.textile set nonumber
 
 syntax on
 
+"must learn hjkl
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
 "color stuff
 set t_Co=256
 colorscheme molokai
