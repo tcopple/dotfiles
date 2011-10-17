@@ -44,7 +44,7 @@ set wildmode=list:longest     "tab complete to longest common string, like bash
 set sidescrolloff=5           " keep at least 5 lines left/right
 set history=200
 set linebreak
-set cmdheight=3               " command line three lines high
+set cmdheight=1               " command line three lines high
 set undolevels=1000           " 1000 undos
 set updatecount=100           " switch every 100 chars
 set complete=.,w,b,u,U,t,i,d  " do lots of scanning on tab completion
@@ -138,3 +138,5 @@ map <Leader>w :call Browser ()<CR>
 map N Nzz
 map n nzz
 
+set laststatus=2
+set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},\ %{&ff}]\ %h\ %m\ %r\ %y\ %=%{fugitive#statusline()}\ [%c,%l/%L]\ %P
