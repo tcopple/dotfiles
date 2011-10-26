@@ -109,14 +109,20 @@ vmap <C-Left> <gv
 "remap leader to ',' which is much easier than '\'
 let mapleader = ','
 
+map <Leader>s :%s/\<<C-r><C-w>\>/
+
 "make nerdtree open when you hit ,d
 map <Leader>d :NERDTreeToggle<CR> :set number<CR>
+
+"fuzzy finder mappings
+map <Leader>f :FufFile<CR>
+map <Leader>c :FufCoverageFile<CR>
 
 so ~/.vim/personal/clean_close.vim
 nnoremap <leader>bd :call CleanClose(0)<Return>
 
 " Automatically cd into the directory that the file is in
-autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
+"autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
 " Remove any trailing whitespace that is in the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
