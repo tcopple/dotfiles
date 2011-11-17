@@ -110,8 +110,8 @@ vmap <C-Left> <gv
 let mapleader = ','
 
 "remap `a to 'a because we care about columns
-nnoremap '`
-nnoremap `'
+nnoremap ' `
+nnoremap ` '
 
 map <Leader>s :%s/\<<C-r><C-w>\>/
 
