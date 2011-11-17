@@ -23,7 +23,7 @@ set shiftwidth=2
 set nowrap
 set scrolloff=5               " keep at le
 set backspace=indent,eol,start
-set guifont=Monospace\ 10
+set guifont=Monospace\ 8
 set noswapfile
 set matchpairs=(:),{:},{:},<:>
 
