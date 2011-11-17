@@ -113,8 +113,7 @@ let mapleader = ','
 nnoremap '`
 nnoremap `'
 
-"make nerdtree open when you hit ,d
-map <Leader>d :NERDTreeToggle<CR> :set number<CR>
+map <Leader>s :%s/\<<C-r><C-w>\>/
 
 "fuzzy finder mappings
 map <Leader>f :FufFile<CR>
