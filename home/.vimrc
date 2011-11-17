@@ -109,7 +109,9 @@ vmap <C-Left> <gv
 "remap leader to ',' which is much easier than '\'
 let mapleader = ','
 
-map <Leader>s :%s/\<<C-r><C-w>\>/
+"remap `a to 'a because we care about columns
+nnoremap '`
+nnoremap `'
 
 "make nerdtree open when you hit ,d
 map <Leader>d :NERDTreeToggle<CR> :set number<CR>
