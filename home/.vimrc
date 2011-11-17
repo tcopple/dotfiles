@@ -145,5 +145,6 @@ map <Leader>w :call Browser ()<CR>
 map N Nzz
 map n nzz
 
+"statusbar fancypants
 set laststatus=2
 set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},\ %{&ff}]\ %h\ %m\ %r\ %y\ %=%{fugitive#statusline()}\ [%c,%l/%L]\ %P
