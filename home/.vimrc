@@ -109,6 +109,9 @@ vmap <C-Left> <gv
 "remap leader to ',' which is much easier than '\'
 let mapleader = ','
 
+nnoremap <leader>x0 :%!xxd<CR>
+nnoremap <leader>x1 :%!xxd -r<CR>
+
 "remap `a to 'a because we care about columns
 nnoremap ' `
 nnoremap ` '
