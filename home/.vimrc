@@ -23,7 +23,7 @@ set shiftwidth=2
 set nowrap
 set scrolloff=5               " keep at le
 set backspace=indent,eol,start
-set guifont=Monospace\ 10
+set guifont=Monospace\ 8
 set noswapfile
 set matchpairs=(:),{:},{:},<:>
 
@@ -109,10 +109,14 @@ vmap <C-Left> <gv
 "remap leader to ',' which is much easier than '\'
 let mapleader = ','
 
-map <Leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <leader>x0 :%!xxd<CR>
+nnoremap <leader>x1 :%!xxd -r<CR>
 
-"make nerdtree open when you hit ,d
-map <Leader>d :NERDTreeToggle<CR> :set number<CR>
+"remap `a to 'a because we care about columns
+nnoremap ' `
+nnoremap ` '
+
+map <Leader>s :%s/\<<C-r><C-w>\>/
 
 "fuzzy finder mappings
 map <Leader>f :FufFile<CR>
@@ -144,5 +148,6 @@ map <Leader>w :call Browser ()<CR>
 map N Nzz
 map n nzz
 
+"statusbar fancypants
 set laststatus=2
 set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},\ %{&ff}]\ %h\ %m\ %r\ %y\ %=%{fugitive#statusline()}\ [%c,%l/%L]\ %P
