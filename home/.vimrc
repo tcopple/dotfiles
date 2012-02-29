@@ -1,6 +1,7 @@
 filetype off
 
 call pathogen#runtime_append_all_bundles()
+
 set modelines=0               " no modelines [http://www.guninski.com/vim1.html]
 set ruler                     " show the line number on the bar
 set more                      " use more prompt
@@ -84,7 +85,7 @@ map <S-l> <Esc>:tabn<CR>
 
 "shortcuts to .vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <silent> <leader>l :so $MYVIMRC<CR>
 
 " move the current line up or down
 nmap <C-Down>  :m+<CR>==
@@ -148,6 +149,19 @@ map <Leader>w :call Browser ()<CR>
 map N Nzz
 map n nzz
 
+let g:syntastic_check_on_open=1
+let g:syntastic_echo_current_error=1
+let g:syntastic_enable_signs=1
+" let g:syntastic_auto_loc_list=1
+nmap <silent> <leader>e :Errors<CR>
+
+
 "statusbar fancypants
 set laststatus=2
-set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},\ %{&ff}]\ %h\ %m\ %r\ %y\ %=%{fugitive#statusline()}\ [%c,%l/%L]\ %P
+set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},\ %{&ff}]\ %h\ %m\ %r\ %y\ %=%{fugitive#statusline()}\ [%c,%l/%L]\ %P =%{SyntasticStatuslineFlag()}
+" set statusline=%t\ [%{strlen(&fenc)?&fenc:'none'},\ %{&ff}]\ %h\ %m\ %r\ %y\ %=%{fugitive#statusline()}\ [%c,%l/%L]\ %P
+
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
