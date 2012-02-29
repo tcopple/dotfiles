@@ -28,3 +28,6 @@
 [submodule "home/.vim/bundle/vim-bundler"]
 	path = home/.vim/bundle/vim-bundler
 	url = git://github.com/tpope/vim-bundler.git
+[submodule "home/.vim/bundle/vim-syntastic"]
+	path = home/.vim/bundle/vim-syntastic
+	url = https://github.com/scrooloose/syntastic.git
