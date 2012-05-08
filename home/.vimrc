@@ -69,7 +69,7 @@ map <right> <nop>
 
 "color stuff
 set t_Co=256
-colorscheme molokai
+colorscheme jellybeans
 
 "cut and paste stuff
 map <C-c> "+y
